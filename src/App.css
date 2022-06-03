@@ -1,38 +1,67 @@
+.main {
+  position: relative;
+}
 .App {
   text-align: center;
+  background: #e98145;
+  height: max-content;
+  font-size: 30px;
+}
+.container {
+  padding: 20px;
+  background-color: white;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.wrpr {
   display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
   flex-direction: column;
+}
+
+.wrpr span {
+  font-size: 16px;
+  color: rgb(59, 53, 53);
+  letter-spacing: 0.7px;
+  margin-bottom: 20px;
+}
+
+.wrprCnt {
+  display: flex;
+  justify-content: flex-start;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.wrprCnt p {
+  border-radius: 10px;
+  padding: 10px;
+  background-color: rgb(185, 185, 185);
+  font-size: 14px;
+  letter-spacing: 0.7px;
+  margin: 7px;
+}
+div.scrollmenu {
+  display: flex;
+  overflow: auto;
+  white-space: nowrap;
+  overflow-x: scroll;
+}
+div.scrollmenu::-webkit-scrollbar {
+  display: none;
+}
+
+div.scrollmenu a {
+  font-size: 18px;
+  display: inline-block;
   color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+div.scrollmenu a:hover {
+  background-color: #777;
 }
