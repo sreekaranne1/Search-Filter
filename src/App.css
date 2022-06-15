@@ -3,13 +3,17 @@
 }
 .App {
   text-align: center;
-  background: #e98145;
+  background: #1ca9eb;
   height: max-content;
   font-size: 30px;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 .container {
   padding: 20px;
   background-color: white;
+  margin-top: 150px;
 }
 
 .wrpr {
@@ -23,7 +27,7 @@
   font-size: 16px;
   color: rgb(59, 53, 53);
   letter-spacing: 0.7px;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 
 .wrprCnt {
@@ -33,6 +37,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
+  margin-bottom: 10px;
 }
 
 .wrprCnt p {
@@ -65,3 +70,37 @@ div.scrollmenu a {
 div.scrollmenu a:hover {
   background-color: #777;
 }
+
+.sb-example-1 .search {
+  width: 25%;
+  position: relative;
+  left: 38%;
+
+  display: flex;
+}
+.sb-example-1 .searchTerm {
+  width: 100%;
+  border: 3px solid #1ca9eb;
+  border-right: none;
+  padding: 5px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9dbfaf;
+}
+.sb-example-1 .searchTerm:focus {
+  color: #000000;
+}
+.sb-example-1 .searchButton {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #1ca9eb;
+  background: #1ca9eb;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+/* .sb-example-1 .searchButton i {
+  color: #1ca9eb;
+} */

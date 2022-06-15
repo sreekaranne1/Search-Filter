@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import axios from "axios";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { HashLink as Link } from "react-router-hash-link";
 import { BrowserRouter } from "react-router-dom";
 
@@ -84,24 +86,46 @@ function App() {
     //   }
     // })
   };
-
+  const scrollWithOffset = (el) => {
+    const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
+    const yOffset = -165;
+    window.scrollTo({ top: yCoordinate + yOffset, behavior: "smooth" });
+  };
   return (
     <BrowserRouter>
       <div className="main">
         <div className="App">
-          <h3 style={{ marginBottom: "0px" }}>SEARCH BAR</h3>
-
-          <input
+          <h3 style={{ marginBottom: "10px", marginTop: "10px" }}>
+            SEARCH BAR
+          </h3>
+          <div class="sb-example-1">
+            <div class="search">
+              <input
+                type="text"
+                class="searchTerm"
+                placeholder="Search.."
+                onChange={(e) => handleSearch(e)}
+              ></input>
+              <button type="submit" class="searchButton">
+                <FontAwesomeIcon icon={faSearch} />
+              </button>
+            </div>
+          </div>
+          {/* <input
             type="search"
             placeholder="Search.."
             onChange={(e) => handleSearch(e)}
-          ></input>
+          ></input> */}
           <div className="scrollmenu">
             {data?.length > 0 &&
               data.map((elem) => {
                 return (
                   <span key={`${elem.tab}${elem.tab_ln}`}>
-                    <Link to={`#${elem.tab}`} smooth>
+                    <Link
+                      to={`#${elem.tab}`}
+                      smooth
+                      scroll={(el) => scrollWithOffset(el)}
+                    >
                       {elem.tab}
                     </Link>
                   </span>
