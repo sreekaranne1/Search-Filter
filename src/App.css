@@ -40,7 +40,8 @@
   margin-bottom: 10px;
 }
 
-.wrprCnt p {
+.wrprCnt .element {
+  display: flex;
   border-radius: 10px;
   padding: 10px;
   background-color: rgb(185, 185, 185);

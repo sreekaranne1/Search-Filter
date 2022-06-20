@@ -18,7 +18,10 @@ function ElementsList(props) {
                 <div className="wrprCnt">
                   {elem?.data?.length > 0 &&
                     elem.data.map((child) => (
-                      <p key={child.name}>{child?.vname}</p>
+                      <div className="element">
+                        <img src={child.simg} alt={child.name}></img>
+                        <p key={child.name}>{child?.vname}</p>
+                      </div>
                     ))}
                 </div>
               </div>
