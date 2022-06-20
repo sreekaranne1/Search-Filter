@@ -1,4 +1,5 @@
 import React from "react";
+import "../App.css";
 
 function ElementsList(props) {
   const { data } = props;
