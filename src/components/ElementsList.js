@@ -3,6 +3,7 @@ import "../App.css";
 
 function ElementsList(props) {
   const { data } = props;
+
   return (
     <div>
       <div className="container">
@@ -18,7 +19,14 @@ function ElementsList(props) {
                 <div className="wrprCnt">
                   {elem?.data?.length > 0 &&
                     elem.data.map((child) => (
-                      <div className="element">
+                      <div
+                        className="element"
+                        onClick={(event) => {
+                          window.location.replace(
+                            `https://www.justdial.com${child.url}`
+                          );
+                        }}
+                      >
                         <img src={child.simg} alt={child.name}></img>
                         <p key={child.name}>{child?.vname}</p>
                       </div>
