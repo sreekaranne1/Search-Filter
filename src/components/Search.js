@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "../App.css";
 import axios from "axios";
-
+import ElementsList from "./ElementsList";
 import { BrowserRouter } from "react-router-dom";
 import NavBar from "./NavBar";
 
 const Search = () => {
-  const [search, setSearch] = useState("");
   const [data, setData] = useState([]);
   const [searchData, setSearchData] = useState([]);
 
@@ -33,29 +32,13 @@ const Search = () => {
   return (
     <BrowserRouter>
       <div className="main">
-        <NavBar data={data} setData={setData} searchData={searchData} scrollWithOffset={scrollWithOffset}/>
-        <div>
-          <div className="container">
-            {data?.length > 0 &&
-              data.map((elem) => {
-                return (
-                  <div
-                    key={`${elem.tab}${elem.tab_ln}`}
-                    id={elem.tab}
-                    className="wrpr"
-                  >
-                    <span>{elem.tab}</span>
-                    <div className="wrprCnt">
-                      {elem?.data?.length > 0 &&
-                        elem.data.map((child) => (
-                          <p key={child.name}>{child?.vname}</p>
-                        ))}
-                    </div>
-                  </div>
-                );
-              })}
-          </div>
-        </div>
+        <NavBar
+          data={data}
+          setData={setData}
+          searchData={searchData}
+          scrollWithOffset={scrollWithOffset}
+        />
+        <ElementsList data={data} />
       </div>
     </BrowserRouter>
   );
