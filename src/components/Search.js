@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import "../App.css";
 import axios from "axios";
 import ElementsList from "./ElementsList";
-import { BrowserRouter } from "react-router-dom";
 import NavBar from "./NavBar";
 
 const Search = () => {
@@ -30,7 +29,7 @@ const Search = () => {
     window.scrollTo({ top: yCoordinate + yOffset, behavior: "smooth" });
   };
   return (
-    <BrowserRouter>
+    <div>
       <div className="main">
         <NavBar
           data={data}
@@ -40,7 +39,7 @@ const Search = () => {
         />
         <ElementsList data={data} />
       </div>
-    </BrowserRouter>
+    </div>
   );
 };
 
