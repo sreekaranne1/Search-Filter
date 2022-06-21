@@ -27,6 +27,7 @@ function DisplayMore(props) {
             data["0"]["data"].map((child) => (
               <div
                 className="element"
+                key={child.name}
                 onClick={(event) => {
                   window.location.replace(
                     `https://www.justdial.com${child.url}`
