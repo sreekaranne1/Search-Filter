@@ -3,14 +3,29 @@ import "../App.css";
 import axios from "axios";
 import ElementsList from "./ElementsList";
 import NavBar from "./NavBar";
+import DisplayMore from "./DisplayMore";
 
 const Search = () => {
   const [data, setData] = useState([]);
   const [searchData, setSearchData] = useState([]);
+  const [more, setMore] = useState(false);
+  const [tab, setTab] = useState("");
+  const [moreContent, setMoreContent] = useState([]);
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
     loadsearches();
   }, []);
+  useEffect(() => {
+    if (count) {
+      setMoreContent(searchData.filter((elem) => elem.tab == tab));
+    }
+  }, [tab]);
+  useEffect(() => {
+    if (count) {
+      setMore(true);
+    }
+  }, [moreContent]);
 
   const loadsearches = async (value) => {
     try {
@@ -31,13 +46,19 @@ const Search = () => {
   return (
     <div>
       <div className="main">
-        <NavBar
-          data={data}
-          setData={setData}
-          searchData={searchData}
-          scrollWithOffset={scrollWithOffset}
-        />
-        <ElementsList data={data} />
+        {!more ? (
+          <>
+            <NavBar
+              data={data}
+              setData={setData}
+              searchData={searchData}
+              scrollWithOffset={scrollWithOffset}
+            />
+            <ElementsList data={data} setTab={setTab} setCount={setCount} />
+          </>
+        ) : (
+          <DisplayMore tabData={tab} data={moreContent} setMore={setMore} />
+        )}
       </div>
     </div>
   );

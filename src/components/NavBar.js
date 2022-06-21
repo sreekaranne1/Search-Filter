@@ -4,7 +4,7 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { HashLink as Link } from "react-router-hash-link";
 
 function NavBar(props) {
-  const { data, setData, searchData ,scrollWithOffset} = props;
+  const { data, setData, searchData, scrollWithOffset } = props;
   const handleSearch = (e) => {
     if (e.target.value.length !== 0) {
       const arrFinal = [];
@@ -39,15 +39,15 @@ function NavBar(props) {
   return (
     <div className="App">
       <h3 style={{ marginBottom: "10px", marginTop: "10px" }}>SEARCH BAR</h3>
-      <div class="sb-example-1">
-        <div class="search">
+      <div className="sb-example-1">
+        <div className="search">
           <input
             type="text"
-            class="searchTerm"
+            className="searchTerm"
             placeholder="Search.."
             onChange={(e) => handleSearch(e)}
           ></input>
-          <button type="submit" class="searchButton">
+          <button type="submit" className="searchButton">
             <FontAwesomeIcon icon={faSearch} />
           </button>
         </div>
