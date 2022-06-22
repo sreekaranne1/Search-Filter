@@ -39,7 +39,7 @@ function ElementsList(props) {
                         </div>
                       );
                     })}
-                  {elem?.data?.length > 5 && (
+                  {elem?.data?.length > 6 && (
                     <div
                       className="moreoption"
                       onClick={(event) => {
